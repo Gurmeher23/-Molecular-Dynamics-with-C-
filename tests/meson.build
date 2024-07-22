@@ -4,7 +4,9 @@ test_sources = [
   'test_hello_world.cpp',
   'gtest_mpi_main.cpp',
   'test_berendsen_thermostat.cpp',
-  'test_lj_direct_summation.cpp'
+  'test_lj_direct_summation.cpp',
+  'test_neighbors.cpp'
+
 
 ]
 

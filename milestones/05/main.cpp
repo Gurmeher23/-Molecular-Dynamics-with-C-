@@ -17,7 +17,7 @@ int main() {
         double sigma = 1.0;
         double epsilon = 1.0;
         double time = sqrt(mass * pow(sigma, 2) / epsilon);
-        double total_time = 5000 * time;
+        double total_time = 100 * time; // Further reduced total time for debugging
         std::cout << "total_time: " << total_time << std::endl;
         double time_step = time / 1000.0;
         std::cout << "time_step: " << time_step << std::endl;
@@ -44,7 +44,7 @@ int main() {
         csv_file << "atoms_number,simulation_time" << std::endl;
 
         // Specific atom counts to test
-        std::vector<int> atom_counts = {27, 64, 125, 216, 343, 512, 729, 1000};
+        std::vector<int> atom_counts = {27, 64, 125}; // Reduced sizes for debugging
 
         // Vary the number of atoms and record simulation time
         for (int atoms_number : atom_counts) {
@@ -66,6 +66,9 @@ int main() {
             for (int i = 0; i < static_cast<int>(total_time / time_step); ++i) {
                 if (i % 10 == 0) {
                     write_xyz(traj, atoms); // write trajectory
+                }
+                if (i % 100 == 0) {
+                    std::cout << "Step: " << i << " for " << atoms_number << " atoms" << std::endl;
                 }
                 double old_total_energy = energy.get_total_energy(); // store old total energy
                 verlet_step1(atoms, time_step, mass); // update positions

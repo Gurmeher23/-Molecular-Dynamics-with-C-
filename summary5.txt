@@ -24,33 +24,15 @@ meson compile
 plot.py(create in buildDir/output/mileston5)
 import pandas as pd
 from matplotlib import pyplot as plt
-import os
-
-# Set the path to the CSV file
-csv_file_path = 'simulation_time_vs_atoms_number.csv'
-
-# Check if the file exists
-if not os.path.exists(csv_file_path):
-    raise FileNotFoundError(f"The file {csv_file_path} does not exist.")
-
-# Set plot parameters
 plt.rcParams["figure.figsize"] = [7.00, 3.50]
 plt.rcParams["figure.autolayout"] = True
-
-# Columns to read
-columns = ["atoms_number", "simulation_time"]
-
-# Read the CSV file
-df = pd.read_csv(csv_file_path, usecols=columns)
-
-# Plot simulation time vs. atoms number
-plt.plot(df.atoms_number, df.simulation_time, label='Simulation Time', color='blue')
-plt.xlabel("Atoms Number")
-plt.ylabel("Simulation Time (s)")
-plt.title("Simulation Time vs Atoms Number")
-plt.grid(True)
-plt.legend()
+columns = ["atoms_number","simulation_time"]
+df = pd.read_csv("simulation_time_vs_atoms_number.csv", usecols=columns)
+plt.plot(df.atoms_number, df.simulation_time)
+plt.xlabel("Atoms number")
+plt.ylabel("Simulation time (s)")
+plt.title("Simulation time vs Atoms number")
+plt.grid(0.1)
 plt.savefig("simulation_time_vs_atoms_number.png")
 plt.show()
-
 
