@@ -2,7 +2,10 @@ google_test = dependency('gtest')
 
 test_sources = [
   'test_hello_world.cpp',
-  'gtest_mpi_main.cpp'
+  'gtest_mpi_main.cpp',
+  'test_berendsen_thermostat.cpp',
+  'test_lj_direct_summation.cpp'
+
 ]
 
 tests = executable(
