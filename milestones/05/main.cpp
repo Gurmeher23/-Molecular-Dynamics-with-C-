@@ -72,7 +72,7 @@ int main() {
                 }
                 double old_total_energy = energy.get_total_energy(); // store old total energy
                 verlet_step1(atoms, time_step, mass); // update positions
-                energy.update(atoms, epsilon, sigma, mass); // update energies
+                energy.energy_update(atoms, epsilon, sigma); // update energies
                 verlet_step2(atoms, time_step, mass); // update velocities
 
                 // Thermal bathing

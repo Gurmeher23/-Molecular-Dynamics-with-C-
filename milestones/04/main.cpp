@@ -66,7 +66,7 @@ int main() {
                 if (i % 10 == 0) write_xyz(traj, atoms);    // writing to xyz file
                 double old_total_energy = energy.get_total_energy();    // storing the old total energy
                 verlet_step1(atoms, time_step, mass);   // updating positions
-                energy.update(atoms, epsilon, sigma, mass);    // updating energies
+                energy.energy_update(atoms, epsilon, sigma);    // updating energies
                 verlet_step2(atoms, time_step, mass);   // updating velocities
                 // check if the system reached equilibrium point to move on to the next time step
                 if (abs(energy.get_total_energy() - old_total_energy) < 0.001 && i > 2) {
