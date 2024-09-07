@@ -75,7 +75,7 @@ void Energy::update_neighbors(Atoms &atoms, NeighborList &neighbor_list, double 
 
 void Energy::update_gupta(Atoms &atoms, NeighborList &neighbor_list,double cutoff_radius) {
     kinetic_energy_ = kinetic_energy(atoms);
-    potential_energy_ = gupta(atoms, neighbor_list,cutoff_radius);
+    potential_energy_ = ducastelle(atoms, neighbor_list,cutoff_radius);
     total_energy_ = total_energy();
     temperature_ = calculate_temperature(atoms, true);
 }
@@ -84,7 +84,7 @@ void Energy::update_gupta(Atoms &atoms, NeighborList &neighbor_list,double cutof
     double per_atom_kinetic_energy = 0.0;
     if (atoms.nb_atoms() > 0) {
         // discarding ghost atoms in potential calculation
-        per_atom_potential_energy = gupta(domain.nb_local(),atoms, neighbor_list,cutoff_radius);
+        per_atom_potential_energy = ducastelle(domain.nb_local(),atoms, neighbor_list,cutoff_radius);
         per_atom_kinetic_energy = kinetic_energy(atoms,domain.nb_local());
     }
 //    // summing up potential & kinetic energy

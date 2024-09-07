@@ -6,7 +6,7 @@ test_sources = [
   'test_berendsen_thermostat.cpp',
   'test_lj_direct_summation.cpp',
   'test_neighbors.cpp',
-  'test_gupta.cpp',
+  'test_ducastelle.cpp',
   'test_verlet.cpp'
 ]
 

@@ -3,7 +3,7 @@
 
 # include "atoms.h"
 # include "lj_direct_summation.h"
-# include "gupta.h"
+# include "ducastelle.h"
 # include "domain.h"
 
 class Energy {
