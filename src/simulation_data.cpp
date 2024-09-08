@@ -3,7 +3,7 @@
 SimulationData::SimulationData() {
     // Initialize all simulation parameters
 //    cluster_name = "cluster_923"; // layer_number = 6
-    layer_numbers = 5;
+    layer_numbers = 10;
     atomic_distance = 2.885; // atomic distance from reference clusters - corresponds to 408 pm lattice constant
     mass = 196.9665* 103.6; // atomic mass of Gold (https://www.nuclear-power.com/gold-atomic-number-mass-density/)
     total_steps = 5;
@@ -36,7 +36,7 @@ void SimulationData::create_directories_and_files() {
     std::string base_dir = base_dir_env ? base_dir_env : ".";
     std::string number_of_layers = std::to_string(layer_numbers);
 
-    std::string milestone_number = "07";
+    std::string milestone_number = "08";
     directory = base_dir + "/output/milestone_" + milestone_number + "/" + number_of_layers + "/";
 
     std::error_code ec;
