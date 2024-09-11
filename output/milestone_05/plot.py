@@ -24,7 +24,7 @@ plt.grid(True, which='both', linestyle='-', linewidth=0.5, alpha=0.4, color='#B0
 plt.legend(loc="upper left", fontsize=10, facecolor='lightgray', edgecolor='black')
 
 # Save the plot with a unique filename
-plt.savefig("custom_color_simulation_time_vs_atoms_number_v2.png", dpi=300)
+plt.savefig("simulation_time_vs_atoms_number.png", dpi=300)
 
 # Show the plot
 plt.show()
