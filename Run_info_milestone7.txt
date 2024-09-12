@@ -19,7 +19,7 @@ desired_temperature = 500.0; // desired temperature (only in the start) in K
 
 
 # Ensure you are in the root of your project
-cd /Users/gurmehersinghpuri/Freiburg/cpp/yamd
+cd /Users/gurmehersinghpuri/Freiburg/cpp/Molecular-Dynamics-with-CPP
 
 # Clean up previous build
 rm -rf buildDir
