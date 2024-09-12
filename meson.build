@@ -5,10 +5,13 @@ project(
     default_options : ['cpp_std=c++17'], # Yes, we need C++17, at least for constexpr
     version : '0.1'
 )
+eigen = dependency('eigen3', required: false)
 
-eigen = dependency('eigen3', version: '>=3.4.0')
+if not eigen.found()
+    eigen = subproject('eigen').get_variable('eigen_dep')
+endif
+
 mpi = dependency('mpi', language: 'cpp')
-
 subdir('src')
 subdir('milestones')
 subdir('tests')
