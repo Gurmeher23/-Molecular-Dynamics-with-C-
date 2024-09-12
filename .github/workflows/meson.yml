@@ -20,9 +20,11 @@ jobs:
         with:
           submodules: true  # Ensure submodules are initialized
 
-      # Install Meson and other dependencies
-      - name: Install Meson
-        run: sudo apt-get install -y meson ninja-build openmpi-bin libopenmpi-dev
+      # Install Meson, Eigen3, and other dependencies
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y meson ninja-build openmpi-bin libopenmpi-dev libeigen3-dev
 
       # Configure Meson, ensuring that the build is set up correctly
       - name: Configure Meson
