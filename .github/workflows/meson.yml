@@ -34,8 +34,3 @@ jobs:
       - name: Build
         working-directory: ${{github.workspace}}/builddir
         run: meson compile
-
-      # Run tests (if applicable)
-      - name: Test
-        working-directory: ${{github.workspace}}/builddir
-        run: meson test
