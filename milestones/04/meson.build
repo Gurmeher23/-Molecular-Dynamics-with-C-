@@ -6,5 +6,9 @@ executable(
     dependencies : [eigen, mpi]
 )
 
-fs = import('fs')
-fs.copyfile(meson.current_source_dir() / 'lj54.xyz', 'lj54.xyz')
+# Copy the lj54.xyz file to the build directory using configure_file
+configure_file(
+    input: meson.current_source_dir() / 'lj54.xyz',
+    output: 'lj54.xyz',
+    copy: true
+)

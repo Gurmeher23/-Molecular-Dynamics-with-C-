@@ -7,7 +7,6 @@ project(
 )
 
 eigen = dependency('eigen3', version: '>=3.4.0')
-eigen3_dep = dependency('eigen3', required: true)
 mpi = dependency('mpi', language: 'cpp')
 
 subdir('src')
